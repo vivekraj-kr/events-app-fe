@@ -1,11 +1,38 @@
 import styled from "styled-components";
 
+const StyledShowcase = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  color: #7c8890;
+  background-image: url("/images/events-banner.jpeg");
+  background-size: cover;
+  background-position: top;
+`;
+
+const StyledText = styled.div`
+  width: 50%;
+  line-height: 30px;
+  padding: 30px;
+`;
+
 const Showcase = () => {
   return (
-    <div>
-      <h1>Welcome to party</h1>
-      <h2>Hottest party</h2>
-    </div>
+    <StyledShowcase>
+      <StyledText>
+        <h1>Welcome to design system events</h1>
+        <p>
+          design systems conference focused on how we work together. We provide
+          tools and standards to scale across an increasing number of devices,
+          platforms, and products. But real success comes when people align
+          around a shared vision and language. Diverse perspectives for design,
+          development, and product unite so more people can be a part of the
+          conversation.
+        </p>
+      </StyledText>
+    </StyledShowcase>
   );
 };
 

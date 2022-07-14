@@ -7,7 +7,7 @@ const HomePage = ({ events }) => {
   console.log(events);
   return (
     <Layout>
-      <h1>Upcoming Events</h1>
+      <h2>Upcoming Events</h2>
       {events.data.length === 0 && <h3>No events to show</h3>}
 
       {events.data.map((event) => (

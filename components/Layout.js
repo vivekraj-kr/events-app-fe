@@ -31,7 +31,7 @@ const Layout = ({ title, keywords, description, children }) => {
 export default Layout;
 
 Layout.defaultProps = {
-  title: "DJ Events",
-  description: "Find the latest DJ Events",
-  keywords: "DJ, Music",
+  title: "Design system events",
+  description: "Design system events",
+  keywords: "Design, events",
 };
