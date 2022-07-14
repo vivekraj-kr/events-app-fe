@@ -9,6 +9,7 @@ const StyledEventItem = styled.div`
 const StyledEventName = styled.div``;
 
 const EventItem = ({ event }) => {
+  console.log(event);
   return (
     <StyledEventItem>
       <Link href={`/events/${event.slug}`}>
@@ -27,7 +28,7 @@ const EventItem = ({ event }) => {
             <div>
               {new Date(event.date).toLocaleDateString("en-US")} at {event.time}
             </div>
-            <div>{event.performers}</div>
+            <div>{event.speakers}</div>
           </StyledEventName>
         </a>
       </Link>
