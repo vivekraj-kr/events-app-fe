@@ -32,13 +32,12 @@ export default class CustomDocument extends Document {
     return (
       <Html>
         <Head>
-          <meta charSet="utf-8" />
           <meta name="theme-color" content="#000000" />
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
             rel="preconnect"
             href="https://fonts.gstatic.com"
-            crossOrigin="true"
+            crossOrigin="anonymous"
           />
           <link
             href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
