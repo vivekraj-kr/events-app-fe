@@ -9,13 +9,21 @@ const StyledShowcase = styled.div`
   color: #7c8890;
   background-image: url("/images/events-banner.jpeg");
   background-size: cover;
-  background-position: top;
+  background-position: top right;
+
+  @media (max-width: 768px) {
+    height: auto;
+  }
 `;
 
 const StyledText = styled.div`
   width: 50%;
   line-height: 30px;
   padding: 30px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const Showcase = () => {

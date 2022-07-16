@@ -12,6 +12,10 @@ const EventPage = ({ event }) => {
   const StyledEventContainer = styled.div`
     display: flex;
     gap: 30px;
+
+    @media (max-width: 992px) {
+      flex-direction: column;
+    }
   `;
   const StyledVideoContainer = styled.div`
     flex: 1 1 60%;

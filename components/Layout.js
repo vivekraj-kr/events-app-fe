@@ -8,8 +8,12 @@ import styled from "styled-components";
 const StyledContainer = styled.div`
   max-width: 1360px;
   margin: 0 auto;
-  padding: 30px 0 60px;
+  padding: 30px 30px 60px 30px;
   margin-top: ${({ isLandingPage }) => (isLandingPage ? "0" : "107px")};
+
+  @media (max-width: 768px) {
+    padding: 30px 15px 60px 15px;
+  }
 `;
 
 const Layout = ({ title, keywords, description, children }) => {
