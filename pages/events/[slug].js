@@ -28,7 +28,7 @@ const StyledEventDetails = styled.div`
 `;
 
 const EventPage = ({ event }) => {
-  const date = useFormattedDate(event.date);
+  const date = useFormattedDate(event.attributes.date);
 
   return (
     <Layout>
