@@ -27,9 +27,15 @@ const Footer = () => {
   return (
     <StyledFooter>
       <StyledFooterLinks>
-        <Link href="/events">About</Link>
-        <Link href="/events">Contact</Link>
-        <Link href="/events">Register</Link>
+        <Link href="/">
+          <a>About</a>
+        </Link>
+        <Link href="/">
+          <a>Contact</a>
+        </Link>
+        <Link href="/">
+          <a>Register</a>
+        </Link>
       </StyledFooterLinks>
       <StyledSubText>Copyright © 2022. All rights reserved.</StyledSubText>
     </StyledFooter>

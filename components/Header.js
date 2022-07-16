@@ -56,10 +56,18 @@ const Header = () => {
         </Link>
       </StyledLogo>
       <StyledNav>
-        <Link href="/events">Events</Link>
-        <Link href="/events">About</Link>
-        <Link href="/events">Contact</Link>
-        <Link href="/events">Register</Link>
+        <Link href="/events">
+          <a>Events</a>
+        </Link>
+        <Link href="/events">
+          <a>About</a>
+        </Link>
+        <Link href="/events">
+          <a>Contact</a>
+        </Link>
+        <Link href="/events">
+          <a>Register</a>
+        </Link>
       </StyledNav>
     </StyledHeader>
   );
