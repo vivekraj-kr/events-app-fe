@@ -46,7 +46,7 @@ const Header = () => {
       <StyledLogo>
         <Link href="/">
           <a>
-            <Image src="/images/events-logo.svg" at="Events app logo" />
+            <Image src="/images/events-logo.svg" alt="Events app logo" />
           </a>
         </Link>
       </StyledLogo>
