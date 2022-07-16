@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/router";
 import styled from "styled-components";
 
@@ -45,7 +46,7 @@ const Header = () => {
       <StyledLogo>
         <Link href="/">
           <a>
-            <img src="/images/events-logo.svg" at="" />
+            <Image src="/images/events-logo.svg" at="Events app logo" />
           </a>
         </Link>
       </StyledLogo>

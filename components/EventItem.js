@@ -38,6 +38,7 @@ const EventItem = ({ event }) => {
             }
             width={500}
             height={280}
+            alt={event.name}
           />
           <StyledEventItemDetails>
             <StyledEventitemTitle>{event.name}</StyledEventitemTitle>
