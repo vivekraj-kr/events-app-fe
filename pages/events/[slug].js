@@ -2,28 +2,33 @@ import Link from "next/link";
 import Layout from "@/components/Layout";
 import { API_URL } from "@/config/index";
 import styled from "styled-components";
+import useFormattedDate from "@/hooks/useFormattedDate";
+
+const StyledTitle = styled.h1`
+  font-size: 40px;
+  color: #5d6971;
+`;
+
+const StyledEventContainer = styled.div`
+  display: flex;
+  gap: 30px;
+
+  @media (max-width: 992px) {
+    flex-direction: column;
+  }
+`;
+
+const StyledVideoContainer = styled.div`
+  flex: 1 1 60%;
+`;
+
+const StyledEventDetails = styled.div`
+  flex: 1 1 40%;
+  color: #5d6971;
+`;
 
 const EventPage = ({ event }) => {
-  const StyledTitle = styled.h1`
-    font-size: 40px;
-    color: #5d6971;
-  `;
-
-  const StyledEventContainer = styled.div`
-    display: flex;
-    gap: 30px;
-
-    @media (max-width: 992px) {
-      flex-direction: column;
-    }
-  `;
-  const StyledVideoContainer = styled.div`
-    flex: 1 1 60%;
-  `;
-  const StyledEventDetails = styled.div`
-    flex: 1 1 40%;
-    color: #5d6971;
-  `;
+  const date = useFormattedDate(event.date);
 
   return (
     <Layout>
@@ -46,7 +51,9 @@ const EventPage = ({ event }) => {
         )}
         <StyledEventDetails>
           <h3>{event.attributes.speakers}</h3>
-          <span>{event.attributes.time}</span>
+          <span>
+            {date} at {event.attributes.time}
+          </span>
           <p>{event.attributes.description}</p>
           <span>Venue: {event.attributes.venue}</span>
           <p>Address: {event.attributes.address}</p>

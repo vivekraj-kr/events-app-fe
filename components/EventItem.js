@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import styled from "styled-components";
+import useFormattedDate from "@/hooks/useFormattedDate";
 
 const StyledEventItem = styled.div``;
 
@@ -26,6 +27,7 @@ const StyledEventitemSpeakers = styled.div`
 `;
 
 const EventItem = ({ event }) => {
+  const date = useFormattedDate(event.date);
   return (
     <StyledEventItem>
       <Link href={`/events/${event.slug}`}>
@@ -43,7 +45,7 @@ const EventItem = ({ event }) => {
           <StyledEventItemDetails>
             <StyledEventitemTitle>{event.name}</StyledEventitemTitle>
             <StyledEventitemDate>
-              {new Date(event.date).toLocaleDateString("en-US")} at {event.time}
+              {date} at {event.time}
             </StyledEventitemDate>
             <StyledEventitemSpeakers>{event.speakers}</StyledEventitemSpeakers>
           </StyledEventItemDetails>
