@@ -46,7 +46,12 @@ const Header = () => {
       <StyledLogo>
         <Link href="/">
           <a>
-            <Image src="/images/events-logo.svg" alt="Events app logo" />
+            <Image
+              width={80}
+              height={80}
+              src="/images/events-logo.svg"
+              alt="Events app logo"
+            />
           </a>
         </Link>
       </StyledLogo>

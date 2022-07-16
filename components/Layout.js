@@ -7,6 +7,7 @@ import styled from "styled-components";
 
 const StyledContainer = styled.div`
   max-width: 1360px;
+  min-height: calc(100vh - 240px);
   margin: 0 auto;
   padding: 30px 30px 60px 30px;
   margin-top: ${({ isLandingPage }) => (isLandingPage ? "0" : "107px")};
