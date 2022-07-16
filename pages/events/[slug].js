@@ -46,10 +46,7 @@ const EventPage = ({ event }) => {
         )}
         <StyledEventDetails>
           <h3>{event.attributes.speakers}</h3>
-          <span>
-            {new Date(event.attributes.date).toLocaleDateString("en-US")} at{" "}
-            {event.attributes.time}
-          </span>
+          <span>{event.attributes.time}</span>
           <p>{event.attributes.description}</p>
           <span>Venue: {event.attributes.venue}</span>
           <p>Address: {event.attributes.address}</p>
