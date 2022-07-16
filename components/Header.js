@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import styled from "styled-components";
 
 const StyledHeader = styled.header`
@@ -6,11 +7,20 @@ const StyledHeader = styled.header`
   align-items: center;
   color: #f7ebda;
   position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9;
   width: 100%;
   padding: 12px 30px;
+  background-color: ${({ isLandingPage }) =>
+    isLandingPage ? "transparent" : "#0d0f10"};
 `;
+
 const StyledLogo = styled.div`
   width: 80px;
+  a {
+    display: block;
+  }
 `;
 const StyledNav = styled.nav`
   margin-left: auto;
@@ -28,11 +38,15 @@ const StyledNav = styled.nav`
 `;
 
 const Header = () => {
+  const router = useRouter();
+  const isLandingPage = router.pathname === "/";
   return (
-    <StyledHeader>
+    <StyledHeader isLandingPage={isLandingPage}>
       <StyledLogo>
         <Link href="/">
-          <img src="/images/events-logo.svg" at="" />
+          <a>
+            <img src="/images/events-logo.svg" at="" />
+          </a>
         </Link>
       </StyledLogo>
       <StyledNav>

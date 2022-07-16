@@ -31,10 +31,7 @@ const Footer = () => {
         <Link href="/events">Contact</Link>
         <Link href="/events">Register</Link>
       </StyledFooterLinks>
-      <StyledSubText>
-        Copyright © 2014–2022 Design Systems Coalition, Inc. All rights
-        reserved.
-      </StyledSubText>
+      <StyledSubText>Copyright © 2022. All rights reserved.</StyledSubText>
     </StyledFooter>
   );
 };

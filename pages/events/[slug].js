@@ -1,48 +1,56 @@
 import Link from "next/link";
-import Image from "next/image";
 import Layout from "@/components/Layout";
 import { API_URL } from "@/config/index";
+import styled from "styled-components";
 
 const EventPage = ({ event }) => {
-  console.log(event);
-  const deleteEvent = (e) => {
-    console.log("delete");
-  };
+  const StyledTitle = styled.h1`
+    font-size: 40px;
+    color: #5d6971;
+  `;
+
+  const StyledEventContainer = styled.div`
+    display: flex;
+    gap: 30px;
+  `;
+  const StyledVideoContainer = styled.div`
+    flex: 1 1 60%;
+  `;
+  const StyledEventDetails = styled.div`
+    flex: 1 1 40%;
+    color: #5d6971;
+  `;
 
   return (
     <Layout>
-      <h1>Event</h1>
-      <h1>{event.attributes.name}</h1>
-      <Link href={`/events/edit/${event.id}`}>
-        <a>Edit event</a>
-      </Link>
-      <a herf="#" onClick={deleteEvent}>
-        Delete
-      </a>
-      <span>
-        {event.attributes.date} at {event.attributes.time}
-      </span>
-      {event.attributes.video && (
-        <div>
-          <iframe
-            width="1136"
-            height="639"
-            src="https://www.youtube.com/embed/VD108ccVDSY"
-            title="Una Kravetz - Calculating Color: Dynamic Theming with CSS Variables Clarity 2020"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
-        </div>
-      )}
-      <p>{event.attributes.speakers}</p>
-      <h3>Description</h3>
-      <p>{event.attributes.description}</p>
-      <h3>Venue {event.attributes.venue}</h3>
-      <p>{event.attributes.address}</p>
       <Link href="/events">
         <a>Go back</a>
       </Link>
+      <StyledTitle>{event.attributes.name}</StyledTitle>
+      <StyledEventContainer>
+        {event.attributes.video && (
+          <StyledVideoContainer>
+            <iframe
+              width="100%"
+              height="400"
+              src={event.attributes.video}
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </StyledVideoContainer>
+        )}
+        <StyledEventDetails>
+          <h3>{event.attributes.speakers}</h3>
+          <span>
+            {new Date(event.attributes.date).toLocaleDateString("en-US")} at{" "}
+            {event.attributes.time}
+          </span>
+          <p>{event.attributes.description}</p>
+          <span>Venue: {event.attributes.venue}</span>
+          <p>Address: {event.attributes.address}</p>
+        </StyledEventDetails>
+      </StyledEventContainer>
     </Layout>
   );
 };
@@ -50,7 +58,7 @@ const EventPage = ({ event }) => {
 export default EventPage;
 
 export async function getServerSideProps({ query: { slug } }) {
-  const res = await fetch(`${API_URL}/api/events?slug=${slug}`);
+  const res = await fetch(`${API_URL}/api/events?filters[slug]=${slug}`);
   const events = await res.json();
 
   return {

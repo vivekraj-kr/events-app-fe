@@ -8,10 +8,13 @@ import styled from "styled-components";
 const StyledContainer = styled.div`
   max-width: 1360px;
   margin: 0 auto;
+  padding: 30px 0 60px;
+  margin-top: ${({ isLandingPage }) => (isLandingPage ? "0" : "107px")};
 `;
 
 const Layout = ({ title, keywords, description, children }) => {
   const router = useRouter();
+  const isLandingPage = router.pathname === "/";
   return (
     <>
       <Head>
@@ -20,9 +23,11 @@ const Layout = ({ title, keywords, description, children }) => {
         <meta name="keywords" content={keywords} />
       </Head>
       <Header />
-      {router.pathname === "/" && <Showcase />}
+      {isLandingPage && <Showcase />}
 
-      <StyledContainer>{children}</StyledContainer>
+      <StyledContainer isLandingPage={isLandingPage}>
+        {children}
+      </StyledContainer>
       <Footer />
     </>
   );
