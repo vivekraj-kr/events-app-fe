@@ -35,9 +35,9 @@ const EventItem = ({ event }) => {
         <a>
           <Image
             src={
-              event.image.data.attributes.url
-                ? event.image.data.attributes.url
-                : "/images/dj_default.jpg"
+              event?.image?.data?.attributes?.url
+                ? event?.image?.data?.attributes?.url
+                : "/images/default-thumbnail.svg"
             }
             width={500}
             height={280}
