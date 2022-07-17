@@ -1,6 +1,7 @@
 import Footer from "./Footer";
 import Head from "next/head";
 import Header from "./Header";
+import PropTypes from "prop-types";
 import Showcase from "./Showcase";
 import styled from "styled-components";
 import { useRouter } from "next/router";
@@ -39,6 +40,21 @@ const Layout = ({ title, keywords, description, children }) => {
 };
 
 export default Layout;
+
+Layout.propTypes = {
+  /**
+   * Document title
+   */
+  title: PropTypes.string,
+  /**
+   * Document meta description
+   */
+  description: PropTypes.string,
+  /**
+   * Document meta keywords
+   */
+  keywords: PropTypes.string,
+};
 
 Layout.defaultProps = {
   title: "Design system events",
