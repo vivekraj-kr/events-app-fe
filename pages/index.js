@@ -10,6 +10,15 @@ const EventListHeader = styled.div`
   justify-content: space-between;
 `;
 
+const StyledLink = styled.a`
+  cursor: pointer;
+  color: #80bbb9;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
 const HomePage = ({ events }) => {
   return (
     <Layout>
@@ -17,7 +26,7 @@ const HomePage = ({ events }) => {
         <h2>Upcoming Events</h2>
         {events.length > 0 && (
           <Link href="/events">
-            <a>View All Events</a>
+            <StyledLink>View All Events</StyledLink>
           </Link>
         )}
       </EventListHeader>

@@ -20,11 +20,28 @@ const StyledEventContainer = styled.div`
 
 const StyledVideoContainer = styled.div`
   flex: 1 1 60%;
+  height: 400px;
+  @media (max-width: 992px) {
+    flex: 1 1 400px;
+  }
+
+  @media (max-width: 480px) {
+    flex: 1 1 200px;
+  }
 `;
 
 const StyledEventDetails = styled.div`
   flex: 1 1 40%;
   color: #5d6971;
+`;
+
+const StyledLink = styled.a`
+  cursor: pointer;
+  color: #80bbb9;
+
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
 const EventPage = ({ event }) => {
@@ -33,7 +50,7 @@ const EventPage = ({ event }) => {
   return (
     <Layout>
       <Link href="/events">
-        <a>Go back</a>
+        <StyledLink>Go back</StyledLink>
       </Link>
       <StyledTitle>{event.attributes.name}</StyledTitle>
       <StyledEventContainer>
@@ -41,7 +58,7 @@ const EventPage = ({ event }) => {
           <StyledVideoContainer>
             <iframe
               width="100%"
-              height="400"
+              height="100%"
               src={event.attributes.video}
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

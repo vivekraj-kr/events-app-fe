@@ -19,6 +19,10 @@ const StyledHeader = styled.header`
   padding: 12px 30px;
   background-color: ${({ isBgEnabled }) =>
     isBgEnabled ? "#0d0f10" : "transparent"};
+
+  @media (max-width: 768px) {
+    padding: 12px 15px;
+  }
 `;
 
 const StyledLogo = styled.div`
@@ -49,6 +53,10 @@ const StyledNav = styled.nav`
     flex-direction: column;
     text-align: center;
     gap: 15px;
+
+    a:hover {
+      border: none;
+    }
   }
 `;
 
