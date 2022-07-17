@@ -7,6 +7,10 @@ const StyledTitle = styled.h1`
   font-size: 40px;
   color: #5d6971;
   margin: 0 0 30px;
+
+  @media (max-width: 768px) {
+    font-size: 24px;
+  }
 `;
 
 const EventsPage = ({ events }) => {

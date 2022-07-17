@@ -19,11 +19,20 @@ const StyledLink = styled.a`
   }
 `;
 
+const StyledTitle = styled.h1`
+  font-size: 30px;
+  color: #5d6971;
+
+  @media (max-width: 768px) {
+    font-size: 24px;
+  }
+`;
+
 const HomePage = ({ events }) => {
   return (
     <Layout>
       <EventListHeader>
-        <h2>Upcoming Events</h2>
+        <StyledTitle>Upcoming Events</StyledTitle>
         {events.length > 0 && (
           <Link href="/events">
             <StyledLink>View All Events</StyledLink>

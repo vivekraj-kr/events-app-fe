@@ -7,6 +7,10 @@ import useFormattedDate from "@/hooks/useFormattedDate";
 const StyledTitle = styled.h1`
   font-size: 40px;
   color: #5d6971;
+
+  @media (max-width: 768px) {
+    font-size: 24px;
+  }
 `;
 
 const StyledEventContainer = styled.div`
