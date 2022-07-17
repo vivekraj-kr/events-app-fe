@@ -1,9 +1,9 @@
-import Head from "next/head";
-import { useRouter } from "next/router";
-import Header from "./Header";
 import Footer from "./Footer";
+import Head from "next/head";
+import Header from "./Header";
 import Showcase from "./Showcase";
 import styled from "styled-components";
+import { useRouter } from "next/router";
 
 const StyledContainer = styled.div`
   max-width: 1360px;

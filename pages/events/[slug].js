@@ -1,6 +1,6 @@
-import Link from "next/link";
-import Layout from "@/components/Layout";
 import { API_URL } from "@/config/index";
+import Layout from "@/components/Layout";
+import Link from "next/link";
 import styled from "styled-components";
 import useFormattedDate from "@/hooks/useFormattedDate";
 

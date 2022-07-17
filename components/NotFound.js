@@ -1,5 +1,5 @@
-import Link from "next/link";
 import Layout from "./Layout";
+import Link from "next/link";
 
 const NotFound = () => {
   return (

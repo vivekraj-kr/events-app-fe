@@ -1,6 +1,6 @@
-import Layout from "@/components/Layout";
 import { API_URL } from "@/config/index";
 import EventList from "@/components/EventList";
+import Layout from "@/components/Layout";
 import styled from "styled-components";
 
 const StyledTitle = styled.h1`

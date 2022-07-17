@@ -1,7 +1,7 @@
-import Layout from "@/components/Layout";
-import Link from "next/link";
 import { API_URL } from "@/config/index";
 import EventList from "@/components/EventList";
+import Layout from "@/components/Layout";
+import Link from "next/link";
 import styled from "styled-components";
 
 const EventListHeader = styled.div`

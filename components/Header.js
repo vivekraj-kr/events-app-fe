@@ -1,9 +1,10 @@
-import { useState, useEffect } from "react";
-import Link from "next/link";
+import { useEffect, useState } from "react";
+
 import Image from "next/image";
-import { useRouter } from "next/router";
+import Link from "next/link";
 import styled from "styled-components";
 import useCheckMobileScreen from "@/hooks/useCheckMobileScreen";
+import { useRouter } from "next/router";
 
 const StyledHeader = styled.header`
   display: flex;
