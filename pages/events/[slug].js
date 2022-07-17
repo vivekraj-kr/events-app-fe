@@ -23,11 +23,11 @@ const StyledVideoContainer = styled.div`
   height: 400px;
   @media (max-width: 992px) {
     flex: 1 1 400px;
-    height: auto;
   }
 
   @media (max-width: 480px) {
     flex: 1 1 200px;
+    height: 200px;
   }
 `;
 
