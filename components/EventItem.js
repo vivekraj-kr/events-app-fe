@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 import useFormattedDate from "@/hooks/useFormattedDate";
 
@@ -56,3 +57,14 @@ const EventItem = ({ event }) => {
 };
 
 export default EventItem;
+
+EventItem.propTypes = {
+  /**
+   * Event object
+   */
+  event: PropTypes.object,
+};
+
+EventItem.defaultProps = {
+  event: {},
+};
