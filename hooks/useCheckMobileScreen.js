@@ -1,5 +1,11 @@
 import { useEffect, useState } from "react";
 
+/**
+ * This function is to check whether the app is being viewed in
+ * mobile screen or not.
+ * @returns {boolean}
+ */
+
 const useCheckMobileScreen = () => {
   const [width, setWidth] = useState(null);
   const handleWindowSizeChange = () => {

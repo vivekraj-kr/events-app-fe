@@ -1,4 +1,5 @@
 import EventItem from "@/components/EventItem";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const StyledEventList = styled.div`
@@ -30,3 +31,14 @@ const EventList = ({ events }) => {
 };
 
 export default EventList;
+
+EventItem.propTypes = {
+  /**
+   * Events array
+   */
+  events: PropTypes.array,
+};
+
+EventItem.defaultProps = {
+  events: [],
+};
