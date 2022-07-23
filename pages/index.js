@@ -51,7 +51,7 @@ export async function getStaticProps() {
   );
   const eventsData = await res.json();
 
-  const events = eventsData.data.slice(0, 4);
+  const events = eventsData?.data?.slice(0, 4);
 
   return {
     props: { events },
